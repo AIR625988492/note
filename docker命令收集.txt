@@ -1,0 +1,17 @@
+1.显示所有容器IP地址：
+docker inspect --format='{{.Name}} - {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+
+2.删除所有容器
+docker rm $(docker ps -aq)
+
+3.一条命令实现停用并删除容器：
+docker stop $(docker ps -q) && docker rm $(docker ps -aq)
+
+4.停用全部运行中的容器:
+docker stop $(docker ps -q)
+
+5.列出所有容器对应的名称，端口，及ip
+ docker inspect -f='{{.Name}} {{.NetworkSettings.IPAddress}} {{.HostConfig.PortBindings}}' $(docker ps -aq)
+
+ 6.列出所有的镜像名字 虽然很少用到
+ docker images --format "{{.Repository}}:{{.Tag}}"

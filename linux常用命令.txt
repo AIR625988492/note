@@ -1,0 +1,11 @@
+﻿1.查看端口占用情况
+netstat -anp | grep 9082
+
+2.查看进程
+ps -ef | grep  14155
+
+3.查看版本
+uname -a
+
+4.批量关闭nginx
+ps -ef|grep nginx|awk '{print $2}'|xargs kill -9

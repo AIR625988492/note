@@ -1,0 +1,49 @@
+﻿1、AND 和 OR 联合使用，类似常规 SQL 语句为： 'where likes>50 AND (by = '菜鸟教程' OR title = 'MongoDB 教程')'
+
+db.col.find({"likes": {$gt:50}, $or: [{"by": "菜鸟教程"},{"title": "MongoDB 教程"}]}).pretty()
+
+2、mongodb 快速连接
+mongodb://localhost:27017
+
+mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
+
+mongodb://ucap_db:ucap_db!@47.96.254.45:27017/ucap_manager_db
+
+远程连接
+mongo mydb --username user1  --host 192.168.99.100 --port 27017 --password
+
+
+打开命令工具，输入命令，其中XXXXX的部分，即你集群的地址，可以在上面找到
+
+mongo "mongodb+srv://XXXXXXXXXXXXX/test" --username weschen 
+
+3、模糊查询
+对比
+MySQL	MongoDB
+select * from student where name like ‘%jack%’	db.student.find({name:{$regex:/jack/}})
+select * from student where name like ‘jack’	db.student.find({name:/^jack/})
+db.test_info.find({"name": {$regex: '测试', $options:'i'}})
+
+4、mongo的导入导出
+     例子: "C:\Program Files\MongoDB\Server\4.0\bin\mongorestore.exe" 
+              -d blog -c articles C:\Users\86133\Downloads\blog\articles.bson
+  It's very simple to import a .bson file:
+
+	mongorestore -d db_name -c collection_name /path/file.bson
+	Incase only for a single collection.Try this:
+
+	mongorestore --drop -d db_name -c collection_name /path/file.bson
+	For restoring the complete folder exported by mongodump:
+
+	mongorestore -d db_name /path/
+
+5、mongodb 的配置文件启动
+      mongod --config  D:/mongodb/mongod.conf
+      mongos  --config D:/mongodb/mongos.conf
+
+6、 mongbd 选择某个字段进行查询 或者排除某个字段
+      //只输出id和title字段，第一个参数为查询条件，空代表查询所有
+          db.news.find( {}, { id: 1, title: 1 } )
+      //如果需要输出的字段比较多，不想要某个字段，可以用排除字段的方法
+      //不输出内容字段，其它字段都输出
+          db.news.find( {}, {content: 0 } )

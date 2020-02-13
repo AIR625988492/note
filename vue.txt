@@ -1,0 +1,15 @@
+1、为什么vue组件的属性，有的需要加冒号“:”，有的不用?
+     加冒号的，说明后面的是一个变量或者表达式；没加冒号的后面就是对应的字符串字面量！
+
+2、路由跳转一般做法
+    renderTo() {
+      this.$router.push({
+        name: "onlineManage"
+      });
+    }
+3：[vue/require-v-for-key] Elements in iteration expect to have 'v-bind:key' directives.
+      解决方法有两种 
+          1、
+	v-for 后添加 :key='item'
+	<li v-for="i in list" :key="i">
+        2 、在build处关闭eslint检测

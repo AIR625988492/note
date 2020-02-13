@@ -1,0 +1,14 @@
+﻿1. 可以是用 npm init -y 来初始化项目 生成package.json 文件
+2. 创建 tsconfig.json 文件
+   tsc --init  :他是一个typescripot 项目的配置文件
+3.npm install @types/node --dev-save 安装 typescript node 声明文件
+4. //TODO: 泛型类 理解问题？？？？？？
+interface ComponentClass<P = {}, S = ComponentState> extends StaticLifecycle<P, S> {
+        new (props: P, context?: any): Component<P, S>;
+        propTypes?: WeakValidationMap<P>;
+        contextType?: Context<any>;
+        contextTypes?: ValidationMap<any>;
+        childContextTypes?: ValidationMap<any>;
+        defaultProps?: Partial<P>;
+        displayName?: string;
+    }

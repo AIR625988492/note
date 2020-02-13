@@ -1,0 +1,70 @@
+1、flex 6个属性设置在容器上：
+   1) flex-direction :	  在主轴(横轴)上的排列方向  属性值有: row  row-reverse column column-reverse 
+   2) flex-warp:	 如果一条线排不下，如何换行  属性值有：nowarp， warp，warp-reverse
+   3) flex-flow :	 flex-direction 和 flex-warp 的简写 默认值 row nowarp
+   4) justify-content: 定义了项目在主轴(横轴)上的对齐方式  属性值有: flex-start flex-end center space-between space-around
+   5) align-items: 定义项目在交叉轴(纵轴) 上的对齐方式。  属性值有:flex-start flex-end center baseline stretch
+   6) align-content: 属性定义了多跟轴线(多行 多列)的对齐方式。如果只有一根轴线，该属性不起作用  属性值有: flex-start  flex-end center space-between space-around stretch
+
+ 2、flex 6个弹性子元素的属性
+   1) order:  属性定义项目(弹性子元素)的排列顺序。数值越小排列越靠前。  属性值有：<number>
+    2) flex-grow: 属性定义了项目的放大比例 默认值为0 ，如果存在剩余空间,也不放大  属性值有 <number>
+    3) flex-shrink: 定义了项目的缩小比例 默认值1 即如果空间不足该项目将缩小
+    4)flex-basis:    在分配多余空间之前，项目占据的主轴空间。  属性值 默认 auto  <length>
+    5)flex：           是flex-grow 、flex-shrink、 flex-basis 简写 默认值 0 1 auto   
+                           建议优先使用这个属性 而不是三个分离的属性
+               	           属性值： auto 和 none 建议优先使用这个属性 而不是三个分离的属性.因为浏览器会推算相关值
+    6)align-self: 单个项目和其他项目的不一样的对齐方式
+	        可覆盖align-items属性 默认值 auto，表示继承父元素的align-items属性
+                        如果没有父元素 则等同于 stretch
+                        属性有：auto flex-start flex-end center basline stretch
+   sass：变量声明 $
+             $mycolor: “#fff”
+
+感念理解
+物理像素：屏幕分辨率
+逻辑像素：css 像素 一般高倍屏 1px = 2 物理像素 或者 1px = 3物理像素
+                 所以同一张图片在高清屏上的显示区域面积会是非高倍屏的1/4
+                 图片在屏幕上的展示面积大大缩小
+	会导致看不清的问题
+
+                iphone 6 的分辨率 750*114
+	2rpx=1px=2物理像素
+                
+              iphone6plus 的分辨率 1080*1920
+                iphone6plus
+                750rpx = 414px = 1080物理像素
+                1.8rpx = 1px = 2.6物理像素
+                 
+ 1、<meta name="apple-mobile-web-app-capable" content="yes">
+        删除默认的苹果工具栏和菜单栏
+ 2、<meta name="apple-touch-fullscreen" content="yes">
+           	
+ 3、<meta name="format-detection" content="telephone=no,address=no">
+       telephone=no 禁止把数字转化为拨号链接 
+       telephone=yes 开启把数字转化为拨号链接，默认开启
+       adress=no 禁止跳转至地图 
+       adress=yes 开启点击地址直接跳转至地图的功能, 默认开启
+ 4、<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	(屏幕顶部条）的颜色；
+                black
+                default
+	black-translucent  灰色半透明 一般 会覆盖页面20px高度–
+                iphone4和itouch4的Retina屏幕为40px
+5、<meta http-equiv="X-UA-Compatible" content="edge" />
+      Edge 模式通知 Windows Internet Explorer 以最高级别的可用模式显示内容，
+      这实际上破坏了“锁定”模式。即如果你有IE9的话说明你有IE789，
+      那么就调用高版本的那个也就是IE9。
+6、<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+      如果IE有安装Google Chrome Frame，那么就走安装的组件，
+      如果没有就和<meta http-equiv="X-UA-Compatible" content="edge" />一样。
+      说明：针对IE 6，7，8等版本的浏览器插件Google Chrome Frame，
+      可以让用户的浏览器外观依然是IE的菜单和界面，
+      但用户在浏览网页时，实际上使用的是Google Chrome浏览器内核。
+7、类选择器
+     加空格表示父子元素
+     不加空格表示同时存在两个类才生效
+
+   
+   
+  

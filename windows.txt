@@ -1,0 +1,4 @@
+1、找到占用端口
+      nestat  -aon|findstr "8080"
+      tasklist|findstr "888"
+      taskkill /f /im node.exe

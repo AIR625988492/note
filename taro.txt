@@ -1,0 +1,19 @@
+taro：
+  支持 props 传入 JSX，但是元素传入 JSX 的属性名必须以 render 开头
+
+2、// 小程序组件常规 props 传递
+<plugin title="{{name}}" desc="{{desc}}" bindonclick="onClick"></plugin>
+
+// 原生小程序组件调用 Taro 组件时需要改造成以下形式：
+this.setData({
+  extraProps: {
+    name,
+    desc,
+    onClick: this.onClick
+  }
+})
+<plugin extraProps="{{extraProps}}" ></plugin>
+
+3、
+Taro 默认会对 10kb 大小以下的资源进行转换，如果需要修改配置，
+可以在 config/index.js 中进行修改，配置位于 weapp.module.postcss。

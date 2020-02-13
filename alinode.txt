@@ -1,0 +1,7 @@
+# 安装版本管理工具 tnvm，安装过程出错参考：https://github.com/aliyun-node/tnvm
+wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash
+source ~/.bashrc
+# tnvm ls-remote alinode 查看需要的版本
+tnvm install alinode-v3.11.4 # 安装需要的版本
+tnvm use alinode-v3.11.4 # 使用需要的版本
+npm install @alicloud/agenthub -g # 安装 agenthub
