@@ -1,0 +1,40 @@
+JS判断数组方法总结
+1、通过Object.prototype.toString.call()做判断
+
+function isArray(obj){
+
+　　return Object.prototype.toString.call().slice(8,-1) === 'Array';
+
+};
+
+2、通过原型链来判断
+
+function isArray(obj){
+
+　　return obj.__proto__ === Array.prototype;
+
+};
+
+3、通过es6 Array.isArrray()做判断
+
+function isArray(obj){
+
+　　return  Array.isArrray(obj);
+
+};
+
+4、通过instanceof做判断
+
+function isArray(obj){
+
+　　return obj instanceof Array
+
+};
+
+5、通过Array.prototype.isPrototypeOf
+
+function isArray(obj){
+
+　　return Array.prototype.isPrototypeOf(obj)
+
+}
