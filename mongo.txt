@@ -9,7 +9,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][
 
 mongodb://ucap_db:ucap_db!@47.96.254.45:27017/ucap_manager_db
 
-远程连接
+2.5 远程连接
 mongo mydb --username user1  --host 192.168.99.100 --port 27017 --password
 
 
