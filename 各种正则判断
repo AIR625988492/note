@@ -1,4 +1,6 @@
 // 邮箱判断
 var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
 reg.test('test@qq.com');
- 
+
+// 过滤连续中文汉字并生成数组
+var reg = /[\u4e00-\u9fa5]+/g; document.body.innerHTML.match(reg).join(" ").split(" ")
