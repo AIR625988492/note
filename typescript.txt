@@ -12,3 +12,16 @@ interface ComponentClass<P = {}, S = ComponentState> extends StaticLifecycle<P, 
         defaultProps?: Partial<P>;
         displayName?: string;
     }
+
+5.typescript 支持内嵌的方式是用jsx
+  需要满足两个条件
+   1、后缀名称需要改成tsx
+   2、启用jsx选项 
+   
+6.抽离css 的插件 *extract-text-webpack-plugin* 还不能支持webpack4.x 
+   Error: Chunk.entrypoints: Use Chunks.groupsIterable and filter by instanceof Entrypoint instead
+   原因： extract-text-webpack-plugin还不能支持webpack4.0.0以上的版本。
+   解决办法：
+      npm install –save-dev extract-text-webpack-plugin@next
+      会下载到+ extract-text-webpack-plugin@4.0.0-beta.0
+      然后在打包就正常了
